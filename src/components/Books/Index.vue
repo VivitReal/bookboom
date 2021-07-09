@@ -7,7 +7,7 @@
                 cols="12"
                 md="4"
             >
-                <v-card min-height="300px">
+                <v-card min-height="300px" @click="displayBook(book)">
                     <div v-if="book.volumeInfo.imageLinks">
                         <img :src="book.volumeInfo.imageLinks.thumbnail" :alt="book.volumeInfo.title">
                     </div>
@@ -23,21 +23,26 @@
                     <p v-if="book.volumeInfo.authors">Author: {{ book.volumeInfo.authors.length == 1 ? book.volumeInfo.authors[0] : book.volumeInfo.authors.join(", ") }}</p>
                 </v-card>
             </v-col>
+
+            <BookModal :book.sync="bookInfo" />
+            
         </v-row>
     </div>
 </template>
 
 <script>
 import {mapState} from 'vuex'
+import BookModal from './BookModal.vue'
 
 export default {
     name: "BookList",
+    components: { BookModal },
     data(){
         return {
+            bookInfo: {}
         }
     },
     computed: {
-
         ...mapState({
             bookList: state => {
                 return state.books.items
@@ -45,6 +50,9 @@ export default {
         })
     },
     methods: {
+        displayBook(book) {
+            this.bookInfo = book
+        }
     }
 }
 </script>
