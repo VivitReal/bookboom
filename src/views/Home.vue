@@ -9,7 +9,7 @@
                     prepend-inner-icon="mdi-magnify"
                     solo-inverted
                     v-model="keyword"
-                    @input="search"
+                    @change="search"
                 ></v-text-field>
             </v-col>
             <v-col cols="3">
@@ -22,7 +22,7 @@
                             :items="orderByList"
                             label="Order by"
                             solo-inverted
-                            @input="search"
+                            @change="search"
                         ></v-select>
                     </v-col>
                     <v-col>
@@ -33,7 +33,7 @@
                             label="Max count"
                             solo-inverted
                             v-model="maxResults"
-                            @input="search"
+                            @change="search"
                         ></v-text-field>
                     </v-col>
                 </v-row>
