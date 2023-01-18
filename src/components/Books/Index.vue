@@ -7,7 +7,7 @@
                 cols="12"
                 md="4"
             >
-                <v-card min-height="300px" @click="displayBook(book)">
+                <v-card min-height="300px" color="#FFF8DC" @click="displayBook(book)">
                     <div v-if="book.volumeInfo.imageLinks">
                         <img :src="book.volumeInfo.imageLinks.thumbnail" :alt="book.volumeInfo.title">
                     </div>

@@ -17,7 +17,7 @@
                     <v-col>
                         <v-select
                             style="width:130px"
-                            background-color="rgba(128,208,199,.8)"
+                            background-color="#FFF8DC"
                             v-model="orderBy"
                             :items="orderByList"
                             label="Order by"
@@ -28,7 +28,7 @@
                     <v-col>
                         <v-text-field
                             style="width:115px"
-                            background-color="rgba(128,208,199,.8)"
+                            background-color="#FFF8DC"
                             clearable
                             label="Max count"
                             solo-inverted
